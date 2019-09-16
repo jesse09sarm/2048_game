@@ -1,5 +1,4 @@
 from functions_2048 import *
-import pygame
 import sys
 
 grid, score, moved = start_game()
@@ -13,13 +12,13 @@ while play_again:
             sys.exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
-                grid, score, moved = up_slide(grid, score, False)
+                grid, score, moved = up_slide(grid, score)
             if event.key == pygame.K_LEFT:
-                grid, score, moved = down_slide(grid, score, False)
+                grid, score, moved = down_slide(grid, score)
             if event.key == pygame.K_UP:
-                grid, score, moved = left_slide(grid, score, False)
+                grid, score, moved = left_slide(grid, score)
             if event.key == pygame.K_DOWN:
-                grid, score, moved = right_slide(grid, score, False)
+                grid, score, moved = right_slide(grid, score)
             if moved:
                 new_block_location(grid, new_block())
             draw_board(grid, score)
